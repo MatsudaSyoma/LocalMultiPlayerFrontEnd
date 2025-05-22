@@ -2,7 +2,6 @@
 chcp 65001
 start powershell -ExecutionPolicy RemoteSigned -File "UEFile\Windows\PixelStreamingClient\Samples\PixelStreaming\WebServers\SignallingWebServer\platform_scripts\cmd\Start_SignallingServer.ps1"
 start cmd /K "node server\server.js"
-index.html
 
 set HOST=localhost
 set PORT=80
@@ -30,5 +29,6 @@ timeout /t %RETRY_DELAY% >nul
 goto WAIT_LOOP
 
 :AFTER_SERVER
+index.html
 cd UEFile\Windows\
 PixelStreamingClient.exe -AudioMixer -PixelStreamingIP=localhost -PixelStreamingPort=8888 -windowed
